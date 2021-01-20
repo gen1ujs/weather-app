@@ -3,7 +3,7 @@ console.log('hello git')
 document.querySelector('#btn').addEventListener('click',function(e){
 
     const location = document.querySelector('#inp').value;
-    fetch(`http://localhost:3000/weather?location=${location}`)
+    fetch(`/weather?location=${location}`)
     .then((response)=>{
         response.json().then((data)=>{
             fillTheBlanks(data); 

@@ -17,6 +17,7 @@ app.set('views', viewsPath)
 app.use(express.static(publicPath))
 
 
+const port = process.env.PORT || 3000
 
 app.get('', (req,res)=>{
     
@@ -56,6 +57,6 @@ app.get('/weather',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('started')
 })
