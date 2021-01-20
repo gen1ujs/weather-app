@@ -1,5 +1,5 @@
 const parent = document.querySelector('#parent')
-
+console.log('hello git')
 document.querySelector('#btn').addEventListener('click',function(e){
 
     const location = document.querySelector('#inp').value;
