@@ -50,9 +50,11 @@ app.get('/weather',(req,res)=>{
         forecast({latitude,longtitude},(error,forecastData)=>{
 
             res.send({
-              temperature : forecastData.temperature,
-              durum : forecastData.weather_descriptions[0],
-              hissedilen : forecastData.feelslike
+              temperature : forecastData.current.temperature,
+              durum : forecastData.current.weather_descriptions[0],
+              hissedilen : forecastData.current.feelslike,
+              yer : forecastData.location.region,
+              ulke : forecastData.location.country
             })
         })
 

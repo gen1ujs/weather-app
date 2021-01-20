@@ -1,9 +1,8 @@
 const parent = document.querySelector('#parent')
-const errorElement = document.querySelector('#errors');
-console.log('hello git')
+const contTable = document.querySelector('#containerTable');
 document.querySelector('#btn').addEventListener('click',function(e){
 
-    const location = document.querySelector('#inp').value;
+    const location = document.querySelector('#location').value;
     fetch(`/weather?location=${location}`)
     .then((response)=>{
         response.json().then((data)=>{
@@ -17,27 +16,28 @@ document.querySelector('#btn').addEventListener('click',function(e){
 function fillTheBlanks(obj){
 
     if(obj.error){
-        errorElement.innerHTML=obj.error;
+        contTable.innerHTML=`<h1 class="konum">${obj.error}</h1>`;
     }else{
-        parent.innerHTML=`
-        <thead>
+        contTable.innerHTML=`
+        <h1 class="konum">${obj.yer},${obj.ulke}</h1>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Beklenen Hadise</th>
+                        <th>Sıcaklık</th>
+                        <th>Hissedilen Sıcaklık</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
-                    <th style="width: 200px;">Hava Durumu</th>
-                    <td style="width: 100px;">${obj.durum}</td>
+                <td>${obj.durum}</td>
+                <td>${obj.temperature}</td>
+                <td>${obj.hissedilen}</td>
                 </tr>
-    
-                <tr>
-                    <th>Sıcaklık</th>
-                    <td>${obj.temperature}</td>
-                </tr>
-    
-                <tr>
-                    <th>Hissedilen</th>
-                    <td>${obj.hissedilen}</td>
-                </tr>
-    
-                
-            </thead>
+                </tbody>
+
+            </table>
         
         
         

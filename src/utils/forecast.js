@@ -8,7 +8,7 @@ const forecast = (cord,callback)=>{
     request({url,json:true},(error,response)=>{
 
         
-        callback(null,response.body.current)
+        callback(null,response.body)
 
         
 
