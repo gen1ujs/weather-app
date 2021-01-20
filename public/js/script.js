@@ -1,8 +1,7 @@
 const parent = document.querySelector('#parent')
 const contTable = document.querySelector('#containerTable');
-document.querySelector('#btn').addEventListener('click',function(e){
+document.addEventListener('DOMContentLoaded',function(e){
 
-    const location = document.querySelector('#location').value;
     fetch(`/weather?location=${location}`)
     .then((response)=>{
         response.json().then((data)=>{
@@ -10,7 +9,7 @@ document.querySelector('#btn').addEventListener('click',function(e){
         })
     })
 
-    e.preventDefault();
+    
 })
 
 function fillTheBlanks(obj){
