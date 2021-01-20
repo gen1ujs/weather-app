@@ -51,7 +51,8 @@ app.get('/weather',(req,res)=>{
 
             res.send({
               temperature : forecastData.temperature,
-              durum : forecastData.weather_descriptions[0]
+              durum : forecastData.weather_descriptions[0],
+              hissedilen : forecastData.feelslike
             })
         })
 

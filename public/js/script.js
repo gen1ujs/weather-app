@@ -26,6 +26,11 @@ function fillTheBlanks(obj){
                 <td>${obj.temperature}</td>
             </tr>
 
+            <tr>
+                <th>Hissedilen</th>
+                <td>${obj.hissedilen}</td>
+            </tr>
+
             
         </thead>
     
