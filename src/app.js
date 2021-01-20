@@ -29,6 +29,12 @@ app.get('', (req,res)=>{
     })
 })
 
+app.get('/about',(req,res)=>{
+
+    res.render('about')
+
+})
+
 app.get('/weather',(req,res)=>{
     if(!req.query.location){
         return res.send({
