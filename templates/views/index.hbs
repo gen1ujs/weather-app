@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Homepage</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <style>
+        table{
+            border-collapse:collapse;
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            
+        }
+        td,th{
+            border: 1px solid black;
+            padding: 8px 16px;
+            text-align: center;
+        }
+        h5{
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cont">
+    {{>header}}
+    <hr>
+    
+    <div id="forms">
+        <h2>Enter a location to get forecast!</h2>
+    <form action="">
+        <label for="loc">Location </label>
+        <input name="loc" id="inp" type="text">
+        <br>
+        <button id="btn" type="submit">GET</button>
+    </form>
+    </div>
+
+
+    <table>
+
+        <thead id="parent">
+    
+        </thead>
+
+        
+    </table>
+
+
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
