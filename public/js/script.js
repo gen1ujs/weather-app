@@ -1,4 +1,5 @@
 const parent = document.querySelector('#parent')
+const errorElement = document.querySelector('#errors');
 console.log('hello git')
 document.querySelector('#btn').addEventListener('click',function(e){
 
@@ -14,27 +15,33 @@ document.querySelector('#btn').addEventListener('click',function(e){
 })
 
 function fillTheBlanks(obj){
-    parent.innerHTML=`
-    <thead>
-            <tr>
-                <th style="width: 200px;">Hava Durumu</th>
-                <td style="width: 100px;">${obj.durum}</td>
-            </tr>
 
-            <tr>
-                <th>Sıcaklık</th>
-                <td>${obj.temperature}</td>
-            </tr>
-
-            <tr>
-                <th>Hissedilen</th>
-                <td>${obj.hissedilen}</td>
-            </tr>
-
-            
-        </thead>
+    if(obj.error){
+        errorElement.innerHTML=obj.error;
+    }else{
+        parent.innerHTML=`
+        <thead>
+                <tr>
+                    <th style="width: 200px;">Hava Durumu</th>
+                    <td style="width: 100px;">${obj.durum}</td>
+                </tr>
     
+                <tr>
+                    <th>Sıcaklık</th>
+                    <td>${obj.temperature}</td>
+                </tr>
     
+                <tr>
+                    <th>Hissedilen</th>
+                    <td>${obj.hissedilen}</td>
+                </tr>
     
-    `;
+                
+            </thead>
+        
+        
+        
+        `;
+    }
+    
 }

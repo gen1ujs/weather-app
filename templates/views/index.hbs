@@ -4,82 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/46cb0f1d39.js" crossorigin="anonymous"></script>
     <title>Homepage</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
     <style>
-        table{
-            border-collapse:collapse;
-            border: 1px solid black;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 10px;
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Serif', serif;
+        }
+        .header {
+			background-image: 
+				linear-gradient(to right bottom,
+					rgba(255, 212, 64, 0.9),
+					rgba(230, 255, 230, 0.7)),
+				    url(img/bg.spg);
+            width: 100%;
+			height: 100vh;
+			background-size: cover;
+			background-position: top;
+			position: relative;
+		}
+        
+        .heading-main {
+			display: block;
+			font-size: 70px;
+			letter-spacing: 10px;
+		}
+        .logo-box {
+			position: absolute;
+			top: 30px;
+			left: 40px;
+            color: white;
+		}
+		
+		.logo {
+			height: 50px;
             
-        }
-        td,th{
-            border: 1px solid black;
-            padding: 8px 16px;
-            text-align: center;
-        }
-        h5{
-            position: absolute;
-            top: 0;
-            right: 10px;
-            font-size: 30px;
-            
-        }
+		}
+        .heading {
+			text-transform: uppercase;
+			color: white;
+			position: absolute;
+			top:10%;
+			left: 50%;
+			text-align: center;
+			transform: translate(-50%,-50%);
+            font-size: 60px;
+		}
+        .heading-sub {
+			display: block;
+			font-size: 15px;
+			letter-spacing: 5px;
+            color: black;
+		}
 
-        @media all and (max-width:600px){
-    #cont{
-        width: 350px;
-        margin-top: 50px;
-    }
-    #inp{
-        font-size: 25px;
-        margin-top: 30px;
-    }
-    label{
-        font-size: 20px;
-    }
-    h1{
-        text-align: center;
-        font-size: 45px;
-    }
-    h2{
-        font-size: 20px;
-    }
-    }
+        #container{
+            width: 1000px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+        #location{
+            font-size: 30px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        #konumunuz{
+            color: #7d5fff;
+            font-size: 40px;
+        }
+        
+        @media all and (max-width:500px){
+            .heading-main{
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div id="cont">
-    {{>header}}
-    <hr>
-    
-    <div id="forms">
-        <h2><mark>Hava durumu tahmini için lokasyon girin</mark></h2>
-    <form action="">
-        <label for="loc">Location </label>
-        <input name="loc" id="inp" type="text">
-        <br>
-        <button id="btn" type="submit">GET</button>
-    </form>
-    </div>
+    <header class="header">
 
+		<div class="logo-box">
+			<span class="logo"><i class="fas fa-cloud-sun fa-4x"></i></span>
+		</div>
 
-    <table>
+		<h1 class="heading">
+			<span class="heading-main">HAVA DURUMU</span>
+            <span class="heading-sub">designed and developed by Namı Değer ADİL ÜNAL'ın biricik yeğeni</span>
+		</h1>
 
-        <thead id="parent">
-    
-        </thead>
+        <div id="container">
 
-        
-    </table>
+            <h2 id="konumunuz">KONUMUNUZ</h2>
+            <form action="">
+
+                <input type="text" name="location" id="location">
+
+            </form>
 
 
 
-    </div>
+
+        </div>
+
+	</header>
+
+
     <script src="js/script.js"></script>
 </body>
 </html>
